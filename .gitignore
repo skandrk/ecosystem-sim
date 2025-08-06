@@ -1,0 +1,101 @@
+# === Rust Workspace ===
+/target/
+# Keep Cargo.lock for reproducible builds since we have binaries
+
+# === Development ===
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.helix/
+
+# Editor temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# === OS Files ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# === ML/AI Specific (Your Focus) ===
+# Model weights (development phase - git ignored)
+assets/models/*.burn
+assets/models/**/*.burn
+assets/models/*.safetensors
+assets/models/**/*.safetensors
+assets/models/*.onnx
+assets/models/**/*.onnx
+assets/models/*.pt
+assets/models/**/*.pt
+assets/models/*.h5
+assets/models/**/*.h5
+
+# Keep model metadata and configs (git tracked)
+!assets/models/**/*.json
+!assets/models/**/*.toml
+!assets/models/**/*.md
+!assets/models/**/.gitignore
+
+# Training artifacts and experiments
+training_outputs/
+experiments/temp/
+model_checkpoints/
+*.experiment
+training_logs/
+evolution_runs/
+
+# === Application Logs & Debug ===
+*.log
+logs/
+debug/
+crash-reports/
+
+# === Configuration & Secrets ===
+.env
+.env.local
+.env.*.local
+secrets.toml
+
+# === Cache & Temporary ===
+.cache/
+cache/
+temp/
+tmp/
+*.csv.tmp
+*.json.tmp
+
+# === Development Tools ===
+# Test coverage
+tarpaulin-report.html
+coverage/
+*.profraw
+
+# Benchmarks
+criterion/
+target/criterion/
+benchmarks/results/
+
+# Documentation builds
+/book/
+/docs/book/
+target/doc/
+
+# === Platform Specific ===
+# Windows
+*.exe
+*.pdb
+
+# macOS
+*.dSYM/
+
+# Linux
+core
