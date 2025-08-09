@@ -2,5 +2,37 @@
 name = "ecosystem-components"
 version = "0.1.0"
 edition = "2024"
+description = "Core ECS components and data structures for ecosystem simulation"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/skandrk/ecosystem-sim.git"
 
 [dependencies]
+# Minimal Bevy - ECS only for lean compilation
+bevy_ecs = { workspace = true }
+bevy_math = { workspace = true, features = ["serialize"] }
+bevy_utils = { workspace = true }
+
+# Serialization support
+serde = { workspace = true, features = ["derive"], optional = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Utilities
+rand = { workspace = true }
+
+[features]
+default = ["serde-support"]
+serde-support = ["dep:serde"]
+debug = []
+
+
+#bevy_ecs: Core ECS functionality (Component, Resource, etc.)
+#bevy_math: Vec2, Vec3 for positions and directions
+#bevy_utils: HashMap, HashSet optimized for game usage
+#serde: Model serialization/deserialization
+#anyhow/thiserror: Robust error handling
+##Features:
+#serde-support: Optional serialization (default on)
+#debug: Extra debug information and validation
