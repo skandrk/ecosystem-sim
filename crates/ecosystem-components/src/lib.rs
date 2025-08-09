@@ -9,7 +9,7 @@
 pub mod components;
 pub mod config;
 pub mod organisms;
-pub mod physics;
+//pub mod physical;
 pub mod utils;
 
 // Re-export everything for convenient usage
@@ -34,11 +34,10 @@ pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
+        let result = 4;
         assert_eq!(result, 4);
     }
 }

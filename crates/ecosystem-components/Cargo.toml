@@ -9,11 +9,11 @@ repository = "https://github.com/skandrk/ecosystem-sim.git"
 [dependencies]
 # Minimal Bevy - ECS only for lean compilation
 bevy_ecs = { workspace = true }
-bevy_math = { workspace = true }
+bevy_math = { workspace = true, features = ["serialize"] }
 bevy_utils = { workspace = true }
 
 # Serialization support
-serde = { workspace = true, features = ["derive"] }
+serde = { workspace = true, features = ["derive"], optional = true }
 
 # Error handling
 anyhow = { workspace = true }
@@ -24,7 +24,7 @@ rand = { workspace = true }
 
 [features]
 default = ["serde-support"]
-serde-support = ["serde"]
+serde-support = ["dep:serde"]
 debug = []
 
 
